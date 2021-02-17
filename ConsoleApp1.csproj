@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ConvertNS.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConvertNS_0.2\ConvertNS_0.2.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ConvertNS">
+      <HintPath>..\ClassLibrary1\obj\Debug\netstandard2.0\ConvertNS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
