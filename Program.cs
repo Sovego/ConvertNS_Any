@@ -1,5 +1,5 @@
 ﻿using System;
-using ConvertNS_0_2;
+using ConvertSN;
 namespace ConsoleApp1
 {
     class Program
@@ -18,7 +18,7 @@ namespace ConsoleApp1
             if (at < 2 || at > 16 || bt < 2 || bt > 16) Console.WriteLine( "Введенные данные не удовлетворяют условию!");
             else
             { 
-                Console.WriteLine(ConvertNS_0_2.ConvertNS.Toany(at, bt, s));
+                Console.WriteLine(ConvertNS.Toany(at, bt, s));
 
             }
 

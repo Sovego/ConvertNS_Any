@@ -10,13 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConvertNS_0.2\ConvertNS_0.2.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ConvertNS">
-      <HintPath>..\ClassLibrary1\obj\Debug\netstandard2.0\ConvertNS.dll</HintPath>
-    </Reference>
+    <Reference Include="ConvertNS"></Reference>
   </ItemGroup>
 
 </Project>
