@@ -15,12 +15,10 @@ namespace ConsoleApp1
             Console.WriteLine ( "Введите конечную систему: ");
             bt=Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Ответ ");
-            if (at < 2 || at > 16 || bt < 2 || bt > 16) Console.WriteLine( "Введенные данные не удовлетворяют условию!");
-            else
-            { 
-                Console.WriteLine(ConvertNS.Toany(at, bt, s));
+            
+            Console.WriteLine(ConvertNS.Toany(at, bt, s));
 
-            }
+            
 
         }
     }
