@@ -2,9 +2,9 @@
 using ConvertSN;
 namespace ConsoleApp1
 {
-    internal class Program
+    class Program
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
             int at, bt;
             string s;
