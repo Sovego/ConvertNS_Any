@@ -14,6 +14,7 @@ namespace ConvertSN
             if (a > 0) return a - 48;
             return a + 74;
         }
+
         /// <summary>
         /// Convert integer part of a number
         /// </summary>
