@@ -5,8 +5,8 @@ namespace ConvertSN
 {
     public static class ConvertNS
     {
-        private static string str;
-        private static string temps;
+        private static string _str;
+        private static string _temps;
 
         private static int CharToInt(char a)
         {
@@ -16,7 +16,7 @@ namespace ConvertSN
         }
 
         /// <summary>
-        /// Convert integer part of a number
+        ///     Convert integer part of a number
         /// </summary>
         /// <param name="at">from which number system to convert</param>
         /// <param name="bt">in which number system to convert</param>
@@ -26,9 +26,9 @@ namespace ConvertSN
             string ex = "";
             int tempi = 0;
 
-            for (int i = 0; i < str.Length && str[i] != '.'; ++i) temps += str[i]; //До точки
+            for (int i = 0; i < _str.Length && _str[i] != '.'; ++i) _temps += _str[i]; //До точки
 
-            tempi = temps.Aggregate(tempi, (current, t) => current * at + CharToInt(t));
+            tempi = _temps.Aggregate(tempi, (current, t) => current * at + CharToInt(t));
 
             if (tempi == 0) Console.WriteLine("0");
             else
@@ -40,8 +40,9 @@ namespace ConvertSN
 
             return ex;
         }
+
         /// <summary>
-        /// Convert fractional part of number
+        ///     Convert fractional part of number
         /// </summary>
         /// <param name="at">from which number system to convert</param>
         /// <param name="bt">in which number system to convert</param>
@@ -50,13 +51,13 @@ namespace ConvertSN
         {
             string ex;
             double tempd = 0;
-            ex = temps;
-            temps = "";
-            for (int i = ex.Length + 1; i < str.Length; ++i) temps += str[i]; //После
-            if (temps.Length > 0)
+            ex = _temps;
+            _temps = "";
+            for (int i = ex.Length + 1; i < _str.Length; ++i) _temps += _str[i]; //После
+            if (_temps.Length > 0)
             {
                 ex = "";
-                for (int i = temps.Length - 1; i >= 0; --i) tempd = (CharToInt(temps[i]) + tempd) / at;
+                for (int i = _temps.Length - 1; i >= 0; --i) tempd = (CharToInt(_temps[i]) + tempd) / at;
                 //while (Math.Round(tempd, MidpointRounding.AwayFromZero) > 0) tempd *= 0.1;
                 while (tempd > 0)
                 {
@@ -68,28 +69,29 @@ namespace ConvertSN
 
             return ex;
         }
+
         /// <summary>
-        /// Convert from any number system to any
+        ///     Convert from any number system to any
         /// </summary>
-        /// <param name ="from_ns">from which number system to convert</param>
-        /// <param name="to_ns">in which number system to convert</param>
+        /// <param name="fromNs">from which number system to convert</param>
+        /// <param name="toNs">in which number system to convert</param>
         /// <param name="numberS">translated number</param>
         /// <returns>Converted number</returns>
-        public static string Toany(int from_ns, int to_ns, string numberS)
+        public static string Toany(int fromNs, int toNs, string numberS)
         {
             if (numberS == "") return "EmptyString";
-            str = numberS;
+            _str = numberS;
             int a = 0;
 
 
-            if (from_ns < 2 || from_ns > 26) return "OutOfNumberSystem";
-            if (to_ns < 2 || to_ns > 26) return "OutOfNumberSystem";
-            foreach (char t in str)
+            if (fromNs < 2 || fromNs > 36) return "OutOfNumberSystem";
+            if (toNs < 2 || toNs > 36) return "OutOfNumberSystem";
+            foreach (char t in _str)
                 if (t == '.')
                     a = 1;
             if (a == 1)
-                return Whole_number(from_ns, to_ns) + "." + D_number(from_ns, to_ns);
-            return Whole_number(from_ns, to_ns);
+                return Whole_number(fromNs, toNs) + "." + D_number(fromNs, toNs);
+            return Whole_number(fromNs, toNs);
         }
     }
 }
