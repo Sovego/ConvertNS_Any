@@ -9,13 +9,13 @@ namespace ConsoleApp1
         {
             int at, bt;
             string s;
-            Console.WriteLine("Введите число: ");
+            Console.WriteLine("Input number: ");
             s = Console.ReadLine();
-            Console.WriteLine("Введите начальную систему: ");
+            Console.WriteLine("Input current number system: ");
             at = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите конечную систему: ");
+            Console.WriteLine("Input next number system: ");
             bt = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ответ ");
+            Console.WriteLine("Result ");
             Console.WriteLine(ConvertNS.Toany(at, bt, s));
         }
     }
